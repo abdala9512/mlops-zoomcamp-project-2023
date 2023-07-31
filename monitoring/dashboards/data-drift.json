@@ -123,7 +123,7 @@
               ],
               "metricColumn": "none",
               "rawQuery": false,
-              "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  prediction_drift\nFROM dummy_metrics\nWHERE\n  $__timeFilter(\"timestamp\")\nORDER BY 1",
+              "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  prediction_drift\nFROM CHURN_ML_METRICS\nWHERE\n  $__timeFilter(\"timestamp\")\nORDER BY 1",
               "refId": "A",
               "select": [
                 [
@@ -135,7 +135,7 @@
                   }
                 ]
               ],
-              "table": "dummy_metrics",
+              "table": "CHURN_ML_METRICS",
               "timeColumn": "\"timestamp\"",
               "timeColumnType": "timestamp",
               "where": [
@@ -257,7 +257,7 @@
               ],
               "metricColumn": "none",
               "rawQuery": false,
-              "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  share_missing_values\nFROM dummy_metrics\nWHERE\n  $__timeFilter(\"timestamp\")\nORDER BY 1",
+              "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  share_missing_values\nFROM CHURN_ML_METRICS\nWHERE\n  $__timeFilter(\"timestamp\")\nORDER BY 1",
               "refId": "A",
               "select": [
                 [
@@ -269,7 +269,7 @@
                   }
                 ]
               ],
-              "table": "dummy_metrics",
+              "table": "CHURN_ML_METRICS",
               "timeColumn": "\"timestamp\"",
               "timeColumnType": "timestamp",
               "where": [
@@ -391,7 +391,7 @@
               ],
               "metricColumn": "none",
               "rawQuery": false,
-              "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  num_drifted_columns\nFROM dummy_metrics\nWHERE\n  $__timeFilter(\"timestamp\")\nORDER BY 1",
+              "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  num_drifted_columns\nFROM CHURN_ML_METRICS\nWHERE\n  $__timeFilter(\"timestamp\")\nORDER BY 1",
               "refId": "A",
               "select": [
                 [
@@ -403,7 +403,7 @@
                   }
                 ]
               ],
-              "table": "dummy_metrics",
+              "table": "CHURN_ML_METRICS",
               "timeColumn": "\"timestamp\"",
               "timeColumnType": "timestamp",
               "where": [
