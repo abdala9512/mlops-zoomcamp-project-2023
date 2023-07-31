@@ -33,12 +33,12 @@ The tech stack used:
 The project uses:
 
 1. [Pipenv](https://docs.pipenv.org/)
-2. [docker](docker.com)
-3. [mlflow]()
-4. [grafana]()
-5. [prefect]()
+2. [docker](https://docker.com)
+3. [mlflow](https://mlflow.org)
+4. [grafana](https://grafana.com)
+5. [prefect](https://prefect.io)
 
-And th VM used for the project:
+And th VM used for the project (AWS EC2 instance):
 
 ![](/assets/aws_instance.png)
 
@@ -113,18 +113,17 @@ For experiment tracking and model registry we use `mlflow`
 We use prefect for orchestration in:
 ![](/assets/prefect_flows.png)
 
-1. Model training
+1. Model training `src/training_pipeline.py`
 ![](/assets/model_training_prefect.png)
-2. Model inference (Predict new data)
-![](/assets/score_churn_prefect.png)
-3. Model monitoring (Calculate drift, and model performance)
+2. Model inference (Predict new data) `src/batch_scoring_pipeline.py`
+![](/assets/score_churn_prefect.png))
+3. Model monitoring (Calculate drift, and model performance) `src/monitor_ml_churn_model.py`
 ![](/assets/monitoring_prefect.png)
 
 
 # 5. Model Deployment
 
 Deployment is done via `Makefile` + `Dockerfile`
-
 
 # 6. Model monitoring
 
@@ -153,6 +152,6 @@ Grafana
 
 ```
 echo "Build dockerfile"
-docker build -t customer_churn_ml_pipeline .
+docker build -t customer_churn_ml_pipeline ./src/deployment
 docker run -v $(pwd):/app/ -it customer_churn_ml_pipeline
 ```
