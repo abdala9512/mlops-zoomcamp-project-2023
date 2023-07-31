@@ -1,7 +1,25 @@
 repos:
-- repo: https://github.com/psf/black
-  rev: stable
-  hooks:
-  - id: black
-    language_version: python3.10
-  
+  # black is a code formatter in Python
+  - repo: https://github.com/ambv/black
+    rev: 22.10.0
+    hooks:
+      - id: black
+
+  # flake8 checks the style and quality of the Python code
+  - repo: https://github.com/pycqa/flake8
+    rev: 5.0.4
+    hooks:
+      - id: flake8
+        entry: pflake8
+
+  # isort sorts imported libraries alphabetically
+  - repo: https://github.com/timothycrosley/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+
+  # interrogate checks the codebase for missing docstrings
+  - repo: https://github.com/econchick/interrogate
+    rev: 1.5.0
+    hooks:
+      - id: interrogate
