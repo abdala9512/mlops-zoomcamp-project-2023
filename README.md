@@ -69,6 +69,28 @@ Execute entire environment:
 make
 ```
 
+## Next steps - ML platform
+
+![](/assets/mlplatform_home.png)
+
+A machine learning (ML) platform interface for deploying machine learning models using the stack of AWS, Flask, MLflow, and Prefect would provide a seamless and scalable solution for model deployment and management. Let's break down the components of the platform:
+
+AWS (Amazon Web Services):
+AWS is a cloud computing service that offers a wide range of tools and services to build, deploy, and manage applications. In the context of the ML platform, AWS will provide the infrastructure and services for hosting the platform components, managing data, and deploying machine learning models.
+
+**Flask**:
+Flask is a lightweight and flexible web framework for Python. It will be used to create the backend of the ML platform, handling HTTP requests and responses. Flask allows easy integration with other Python libraries and will serve as the API layer to interact with the ML models.
+
+**MLflow**:
+MLflow is an open-source platform for managing the end-to-end machine learning lifecycle. It allows data scientists to track and version their experiments, package and deploy models, and manage model deployments. MLflow also provides tools for model registry and collaboration between team members.
+
+**Prefect**:
+    Prefect is a workflow management system that helps in orchestrating complex data workflows, including ML model training, evaluation, and deployment. It provides a way to define, schedule, and monitor workflows, making it easier to automate and manage the deployment pipeline for machine learning models.
+
+UI for deployment:
+
+![](/assets/mlplatform_deployment.png)
+
 # 3. Experiment Tracking and model registry
 
 For experiment tracking and model registry we use `mlflow`
@@ -102,8 +124,23 @@ Deployment is done via `Makefile` + `Dockerfile`
 
 # 6. Model monitoring
 
+Machine learning monitoring with Grafana and Postgres involves using these two tools to track, visualize, and analyze the performance and behavior of machine learning models deployed in production. Let's break down how each component contributes to the monitoring process:
 
+**Machine Learning Models in Production:**
+When machine learning models are deployed in a production environment, they interact with real-world data, and their performance and behavior may change over time. Monitoring these models is essential to ensure they continue to make accurate predictions and maintain their desired performance.
+
+**Grafana:**
+Grafana is an open-source data visualization and monitoring tool. It allows you to create interactive and customizable dashboards to visualize and analyze data from various sources, including databases, APIs, and monitoring systems. Grafana is highly extensible and supports numerous data sources, making it suitable for integrating with different monitoring and logging tools.
+
+**Postgres (PostgreSQL):**
+Postgres is an open-source, powerful relational database management system (RDBMS). It is often used to store data from applications, including machine learning models. Postgres is known for its performance, scalability, and support for complex queries.
+
+Adminer data explorer (PostgreSQL database)
 ![](/assets/adminer_sc.png  )
+
+Grafana
+![](/assets/grafana_dash.png)
+
 # Reproducibility
 
 1. Run `Makefile`
