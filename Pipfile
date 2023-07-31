@@ -11,7 +11,8 @@ xgboost = ">=1.6.0"
 prefect = ">2.0.0"
 evidently = "*"
 hyperopt = "*"
-pyscopg2 = "*"
+psycopg = "*"
+streamlit = "*"
 
 [dev-packages]
 jupyterlab = "*"
