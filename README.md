@@ -38,6 +38,10 @@ The project uses:
 4. [grafana]()
 5. [prefect]()
 
+And th VM used for the project:
+
+![](/assets/aws_instance.png)
+
 We use Makefile to reproduce the needed environment in any infrastructure.
 
 ```bash
@@ -69,7 +73,7 @@ Execute entire environment:
 make
 ```
 
-## Next steps - ML platform
+## Next steps - ML platform (WIP)
 
 ![](/assets/mlplatform_home.png)
 
@@ -143,5 +147,12 @@ Grafana
 
 # Reproducibility
 
-1. Run `Makefile`
-2. Execute
+1. Run `Makefile` (Local or cloud)
+2. Execute docker files
+
+
+```
+echo "Build dockerfile"
+docker build -t customer_churn_ml_pipeline .
+docker run -v $(pwd):/app/ -it customer_churn_ml_pipeline
+```
