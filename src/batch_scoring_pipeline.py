@@ -1,11 +1,13 @@
 import mlflow
 from prefect import flow, get_run_logger, task
 from prefect.task_runners import SequentialTaskRunner
-from churnlib import CHURN_MLFLOW_MODEL_NAME, ChurnModel
+from churnlib import CHURN_MLFLOW_MODEL_NAME
 import pandas as pd
-import datetime
 
+PRODUCTION_DATA_PATH = "../data/fake_prod_data.csv"
+PREDICTIONS_DATA_PATH = "../data/predictions.parquet"
 
+mlflow.set_tracking_uri("http://localhost:5000")
 
 @task
 def ingest_data():
