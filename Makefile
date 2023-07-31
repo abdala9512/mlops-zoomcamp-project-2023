@@ -1,11 +1,11 @@
 SHELL=/bin/bash
 
-build-local-environment:
-	@echo "Building local environment"
+build-environment-and-services:
+	@echo "Building Python environment"
 	pip install pipenv &&\
 	pipenv install
 	@echo "Running MLFlow Server on localhost:5000"
-	rm mlflow.db &&\
+	rm -rf mlflow.db mlruns/ &&\
 	nohup mlflow server \
 		--backend-store-uri sqlite:///mlflow.db \
 		--default-artifact-root ./artifacts \
@@ -18,7 +18,3 @@ build-local-environment:
 	@echo "Deploying Grafana on localhost:3000"
 	@echo "Deploying Adminer on localhost:8080"
 	@echo "The local environment is ready to be used."
-
-build-cloud-environment:
-	@echo "Building cloud environment"
-	
