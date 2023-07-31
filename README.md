@@ -125,6 +125,15 @@ We use prefect for orchestration in:
 
 Deployment is done via `Makefile` + `Dockerfile`
 
+## Steps
+
+0. clone the repository `git clone https://github.com/abdala9512/mlops-zoomcamp-project-2023.git`
+1. Execute `Makefile` to create services `make`
+2. Execute model training pipeline `python src/training_pipeline.py`
+3. Promote any model to PROD in Mlflow
+4. Execute scoring pipeline `python src/batch_scoring_pipeline.py`
+5. Execute Monitoring pipeline  `python src/monitor_ml_churn_model.py`
+
 # 6. Model monitoring
 
 Machine learning monitoring with Grafana and Postgres involves using these two tools to track, visualize, and analyze the performance and behavior of machine learning models deployed in production. Let's break down how each component contributes to the monitoring process:
